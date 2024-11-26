@@ -71,7 +71,8 @@ def main():
 
     random_indices = np.random.choice(len(X_test), 4, replace=False)
     X_examples = X_test[random_indices]
-    Y_examples = y_test[random_indices]
+    Y_examples = predictions[random_indices]
+    Y_examples = [np.argmax(y) for y in Y_examples]
     plot_examples(X_examples, Y_examples)
 
 
